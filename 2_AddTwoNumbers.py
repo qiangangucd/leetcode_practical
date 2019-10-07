@@ -25,7 +25,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        prev = result = ListNode(None)
+        result=prev = ListNode(None)
         carry = 0
         while l1 or l2 or carry:
             if l1:
