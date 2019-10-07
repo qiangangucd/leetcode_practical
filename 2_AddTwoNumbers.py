@@ -17,6 +17,7 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """
@@ -24,3 +25,16 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        prev = result = ListNode(None)
+        carry = 0
+        while l1 or l2 or carry:
+            if l1:
+                carry += l1.val
+                l1 = l1.next
+            if l2:
+                carry += l2.val
+                l2 = l2.next
+            prev.next = ListNode(carry % 10)
+            prev = prev.next
+            carry //= 10
+        return result.next
