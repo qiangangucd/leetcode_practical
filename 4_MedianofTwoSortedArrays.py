@@ -64,6 +64,6 @@ class Solution():
 
 if __name__ == '__main__':
     A = [1, 3, 6, 8, 9]
-    B = [2, 3, 4, 5, 5, 5]
+    B = [2, 3, 4, 5, 5]
     a = Solution()
     print(a.findMedianSortedArrays(A, B))
