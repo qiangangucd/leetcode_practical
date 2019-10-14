@@ -35,12 +35,18 @@ class Solution(object):
         """
         if numRows == 1:
             return s
-        zigzag = [[] for _ in range(numRows)]
         row = 0
         direction = -1
+        zigzag = [[] for _ in range(numRows)]
         for c in s:
             zigzag[row].append(c)
             if row == 0 or row == numRows - 1:
-                direction - direction
+                direction = -direction
             row += direction
         return ''.join([c for r in zigzag for c in r])
+
+
+if __name__ == '__main__':
+    s = 'PAYPALISHIRING'
+    c = Solution()
+    print(c.convert(s, 5))
